@@ -1,0 +1,1 @@
+Se adjunta el script en R, es necesario cambiar el directorio del archivo del dataset de la competencia de Kaggle.
