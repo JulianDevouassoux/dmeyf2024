@@ -263,7 +263,7 @@ TS_strategy_base8 <- function( pinputexps )
 
   param_local$meta$script <- "/src/wf-etapas/z2101_TS_training_strategy.r"
 
-  param_local$future <- c(202109)
+  param_local$future <- c(202108)
 
   param_local$final_train$undersampling <- 1.0
   param_local$final_train$clase_minoritaria <- c( "BAJA+1", "BAJA+2")
@@ -294,7 +294,7 @@ TS_strategy_base8 <- function( pinputexps )
 
   param_local$meta$script <- "/src/wf-etapas/z2101_TS_training_strategy.r"
 
-  param_local$future <- c(202109)
+  param_local$future <- c(202108)
 
   param_local$final_train$undersampling <- 0.02
   param_local$final_train$clase_minoritaria <- c( "BAJA+1", "BAJA+2")
@@ -455,7 +455,7 @@ KA_evaluate_kaggle_semillerio <- function( pinputexps )
 {
   if( -1 == (param_local <- exp_init())$resultado ) return( 0 )# linea fija
 
-  param_local$meta$script <- "/src/wf-etapas/z2603_KA_evaluate_kaggle_SEMI.r"
+  param_local$meta$script <- "/src/wf-etapas/z2602_KA_evaluate_kaggle_SEMI.r"
 
   param_local$semilla <- NULL  # no usa semilla, es deterministico
 
@@ -464,7 +464,7 @@ KA_evaluate_kaggle_semillerio <- function( pinputexps )
   param_local$envios_desde <- 10500L
   param_local$envios_hasta <- 12050L
   param_local$envios_salto <-   500L
-  param_local$competition <- "dm-ey-f-2024-tercera"
+  param_local$competition <- "dm-ey-f-2024-segunda"
 
   return( exp_correr_script( param_local ) ) # linea fija
 }
@@ -480,8 +480,8 @@ wf_SEMI_ago_orden227 <- function( pnombrewf )
 {
   param_local <- exp_wf_init( pnombrewf ) # linea fija
 
-  # Etapa especificacion dataset de la Tercera Competencia Kaggle
-  DT_incorporar_dataset( "~/buckets/b1/datasets/competencia_03.csv.gz")
+  # Etapa especificacion dataset de la Segunda Competencia Kaggle
+  DT_incorporar_dataset( "~/buckets/b1/datasets/competencia_02.csv.gz")
 
   CA_catastrophe_base( metodo="MachineLearning")
   FEintra_manual_base()
@@ -516,7 +516,7 @@ wf_SEMI_ago_orden227 <- function( pnombrewf )
 #------------------------------------------------------------------------------
 # Aqui comienza el programa
 
-# llamo al workflow con future = 202109
+# llamo al workflow con future = 202108
 wf_SEMI_ago_orden227()
 
 
